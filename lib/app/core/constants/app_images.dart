@@ -1,5 +1,5 @@
 abstract class AppImages {
-  static const estudoBiblico = 'assets/images/estudoBiblico.jpeg';
+  static const estudoBiblico = 'assets/images/estudoBiblico.png';
   static const youtube = 'assets/images/youtube.jpg';
   static const logoIasd = 'assets/images/LogoIgreja.png';
   static const avatar = 'assets/images/avatar.png';
@@ -13,4 +13,6 @@ abstract class AppImages {
   static const logoDbv = 'assets/images/logoDbv.png';
   static const logoAvt = 'assets/images/logoAvt.png';
   static const logoApostolos = 'assets/images/logoApostolos.png';
+  static const tvNovoTempo = 'assets/images/tvNovoTempo.jpeg';
+  static const cursoBiblico = 'assets/images/cursoBiblico.png';
 }

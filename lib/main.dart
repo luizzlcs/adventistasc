@@ -19,12 +19,23 @@ class MyApp extends StatelessWidget {
         url: UrlLinks.retiroEspiritual,
         icon: AppImages.acampamento,
         share: UrlLinks.retiroEspiritualMsg,
+      ),const SocialLinkModel(
+        title: 'Tv Novo Tempo ao vivo 24h',
+        url: UrlLinks.tvNovoTempo,
+        icon: AppImages.tvNovoTempo,
+        share: UrlLinks.tvNovoTempoMsg,
       ),
       const SocialLinkModel(
         title: 'YouTube',
         url: UrlLinks.youtube,
         icon: AppImages.youtube,
         share: UrlLinks.youtubeMsg,
+      ),
+      const SocialLinkModel(
+        title: 'Peça gratuitamente',
+        url: UrlLinks.cursoBiblico,
+        icon: AppImages.cursoBiblico,
+        share: UrlLinks.cursoBiblicoMsg,
       ),
       const SocialLinkModel(
         title: 'Nossa localização',
@@ -85,7 +96,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: SocialLinksPage(
-        profileImageUrl: AppImages.logoChurch,
+        profileImageUrl: AppImages.siteLogoAdv,
         username: 'adventistaSC',
         links: links,
       ),
