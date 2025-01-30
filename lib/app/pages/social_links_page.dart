@@ -1,8 +1,11 @@
+import 'dart:developer';
+
 import 'package:bios/app/model/social_link_model.dart';
 import 'package:bios/app/pages/components/social_link_button.dart';
+import 'package:bios/app/pages/counter_controller.dart';
 import 'package:flutter/material.dart';
 
-class SocialLinksPage extends StatelessWidget {
+class SocialLinksPage extends StatefulWidget {
   final String profileImageUrl;
   final String username;
   final List<SocialLinkModel> links;
@@ -14,9 +17,24 @@ class SocialLinksPage extends StatelessWidget {
       required this.links});
 
   @override
+  State<SocialLinksPage> createState() => _SocialLinksPageState();
+}
+
+class _SocialLinksPageState extends State<SocialLinksPage> {
+  final CounterController _counterController = CounterController();
+
+  @override
+  void initState() {
+    super.initState();
+    // _counterController.updateSheet();
+    _counterController.initializeAndIncrement();
+    log('contador: ${_counterController.counter}');
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(186, 141, 171, 216),
+      backgroundColor: const Color.fromARGB(186, 141, 171, 216),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.only(top: 8.0),
@@ -53,13 +71,13 @@ class SocialLinksPage extends StatelessWidget {
                     backgroundColor: Colors.white,
                     child: CircleAvatar(
                       radius: 40,
-                      backgroundImage: NetworkImage(profileImageUrl),
+                      backgroundImage: NetworkImage(widget.profileImageUrl),
                     ),
                   ),
                   const SizedBox(height: 10),
                   // Username
                   Text(
-                    '@$username',
+                    '@${widget.username}',
                     style: const TextStyle(
                       color: Colors.white,
                       fontSize: 18,
@@ -72,9 +90,9 @@ class SocialLinksPage extends StatelessWidget {
                   Expanded(
                     child: ListView.builder(
                       padding: const EdgeInsets.symmetric(horizontal: 16),
-                      itemCount: links.length,
+                      itemCount: widget.links.length,
                       itemBuilder: (context, index) {
-                        final link = links[index];
+                        final link = widget.links[index];
                         return Padding(
                           padding: const EdgeInsets.only(bottom: 12),
                           child: SocialLinkButton(link: link),
@@ -86,12 +104,19 @@ class SocialLinksPage extends StatelessWidget {
                     color: Colors.white54,
                   ),
                   const Text(
-                    'Descrição de Texto aqui no final da página',
-                    style: TextStyle(color: Color.fromARGB(255, 204, 204, 204)),
-                  ),
-                  const Text(
-                    'Descrição de Texto aqui no final da página',
-                    style: TextStyle(color: Color.fromARGB(255, 204, 204, 204)),
+                      'Igreja Adventista do 7º Dia - Conj. Sat. Catarina, Natal - RN',
+                      style:
+                          TextStyle(color: Color.fromARGB(255, 189, 188, 188))),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 8.0),
+                    child: AnimatedBuilder(
+                      animation: _counterController,
+                      builder: (context, child) => Text(
+                        'Númro de acessos: ${_counterController.counter}',
+                        style: const TextStyle(
+                            color: Color.fromARGB(255, 122, 122, 122)),
+                      ),
+                    ),
                   ),
                 ],
               ),
