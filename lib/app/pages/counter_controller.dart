@@ -66,7 +66,7 @@ class CounterController with ChangeNotifier {
 
       if (response.values != null && response.values!.isNotEmpty) {
         // Primeira linha (B1) contém a data
-        if (response.values!.length > 0) {
+        if (response.values!.isNotEmpty) {
           _lastDate = DateTime.parse(response.values![0][0].toString());
         }
         
