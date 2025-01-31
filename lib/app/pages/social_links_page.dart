@@ -28,7 +28,7 @@ class _SocialLinksPageState extends State<SocialLinksPage> {
     super.initState();
     // _counterController.updateSheet();
     _counterController.initializeAndIncrement();
-    log('contador: ${_counterController.counter}');
+    log('contador: ${_counterController.pageAccessCount}');
   }
 
   @override
@@ -104,15 +104,18 @@ class _SocialLinksPageState extends State<SocialLinksPage> {
                     color: Colors.white54,
                   ),
                   const Text(
-                      'Igreja Adventista do 7º Dia - Conj. Sat. Catarina, Natal - RN',
-                      style:
-                          TextStyle(color: Color.fromARGB(255, 189, 188, 188))),
+                    'Igreja Adventista do 7º Dia - Conj. Sat. Catarina, Natal - RN',
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 189, 188, 188),
+                    ),
+                  ),
+                  
                   Padding(
                     padding: const EdgeInsets.only(bottom: 8.0),
                     child: AnimatedBuilder(
                       animation: _counterController,
                       builder: (context, child) => Text(
-                        'Númro de acessos: ${_counterController.counter}',
+                        'Númro de acessos: ${_counterController.pageAccessCount}',
                         style: const TextStyle(
                             color: Color.fromARGB(255, 122, 122, 122)),
                       ),
