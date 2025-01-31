@@ -17,16 +17,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<SocialLinkModel> links = [
-      SocialLinkModel(
-          title: 'Retiro Espiritual - Faça sua inscrição',
-          url: UrlLinks.retiroEspiritual,
-          icon: AppImages.acampamento,
-          share: UrlLinks.retiroEspiritualMsg,
-          count: _controller.getCount(ButtonType.retiro).toString(),
-          countClick: () {
-            _controller.incrementCounter(ButtonType.retiro);
-            _controller.fetchCounterByType(ButtonType.retiro);
-          }),
+      // SocialLinkModel(
+      //     title: 'Retiro Espiritual - Faça sua inscrição',
+      //     url: UrlLinks.retiroEspiritual,
+      //     icon: AppImages.acampamento,
+      //     share: UrlLinks.retiroEspiritualMsg,
+      //     count: _controller.getCount(ButtonType.retiro).toString(),
+      //     countClick: () {
+      //       _controller.incrementCounter(ButtonType.retiro);
+      //       _controller.fetchCounterByType(ButtonType.retiro);
+      //     }),
       SocialLinkModel(
         title: 'Tv Novo Tempo ao vivo 24h',
         url: UrlLinks.tvNovoTempo,
@@ -92,7 +92,7 @@ class MyApp extends StatelessWidget {
         countClick: () => _controller.incrementCounter(ButtonType.insta),
       ),
       SocialLinkModel(
-        title: 'Site Oficial dos Adventistas do 7º Dia',
+        title: 'Site Oficial',
         url: UrlLinks.siteAdventista,
         icon: AppImages.siteLogoAdv,
         share: UrlLinks.siteAdventistaMsg,

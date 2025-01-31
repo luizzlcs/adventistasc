@@ -26,7 +26,6 @@ class _SocialLinksPageState extends State<SocialLinksPage> {
   @override
   void initState() {
     super.initState();
-    // _counterController.updateSheet();
     _counterController.initializeAndIncrement();
     log('contador: ${_counterController.pageAccessCount}');
   }
@@ -71,7 +70,7 @@ class _SocialLinksPageState extends State<SocialLinksPage> {
                     backgroundColor: Colors.white,
                     child: CircleAvatar(
                       radius: 40,
-                      backgroundImage: NetworkImage(widget.profileImageUrl),
+                      backgroundImage: AssetImage(widget.profileImageUrl),
                     ),
                   ),
                   const SizedBox(height: 10),
