@@ -4,8 +4,11 @@ import 'package:bios/app/model/social_link_model.dart';
 import 'package:bios/app/pages/counter_controller.dart';
 import 'package:bios/app/pages/social_links_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 void main() {
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   runApp(MyApp());
 }
 
@@ -17,16 +20,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<SocialLinkModel> links = [
-      // SocialLinkModel(
-      //     title: 'Retiro Espiritual - Faça sua inscrição',
-      //     url: UrlLinks.retiroEspiritual,
-      //     icon: AppImages.acampamento,
-      //     share: UrlLinks.retiroEspiritualMsg,
-      //     count: _controller.getCount(ButtonType.retiro).toString(),
-      //     countClick: () {
-      //       _controller.incrementCounter(ButtonType.retiro);
-      //       _controller.fetchCounterByType(ButtonType.retiro);
-      //     }),
       SocialLinkModel(
         title: 'Tv Novo Tempo ao vivo 24h',
         url: UrlLinks.tvNovoTempo,

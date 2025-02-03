@@ -57,7 +57,7 @@ class SocialLinkButton extends StatelessWidget {
                   final uri = Uri.parse(link.url);
                   link.countClick();
 
-                  await launchUrl(uri, mode: LaunchMode.inAppWebView);
+                  await launchUrl(uri, mode: LaunchMode.externalApplication);
                 } catch (e) {
                   log('Error parsing URL:>>> $e');
                   if (context.mounted) {

@@ -14,6 +14,7 @@ static const String youtube = 'https://www.youtube.com/@adventistasc';
   static const  String  siteAdventista = 'https://www.adventistas.org/pt/';
   static const  String  tvNovoTempo = 'https://www.youtube.com/watch?v=B8Jns0ihdb8';
   static const  String  cursoBiblico = 'https://cursos.novotempo.com/';
+  static const  String  nossaIgreja = 'https://adventistasc.netlify.app/';
 
   // MENSAGEM
 
@@ -30,6 +31,9 @@ static const String youtubeMsg = """🎬 Acompanhe igreja e saiba mais sobre nos
   static const  String  siteAdventistaMsg = """🌟 Acesse o site oficial dos Adventista do 7º Dia e conheça mais sobre nossa igreja: $siteAdventista 💫""";
   static const  String  tvNovoTempoMsg = """🌟 Assista a programação da TV Novo Tempo, o Canal da Esperança, ao vivo por 24 horas grátis: $tvNovoTempo 💫""";
   static const  String  cursoBiblicoMsg = """🌟 Peça gratuitamente um guia de estudos da Bíblia: $cursoBiblico 💫""";
+  static const  String  nossaIgrejaMsg = """🌟 Oi! Se você quer saber mais sobre a nossa igreja e como participar dos nossos serviços e atividades, é só clicar no link: https://adventistasc.netlify.app/\n
+Lá você encontra tudo sobre a nossa programação, como chegar, nossos contatos e muito mais.\n
+Vai ser ótimo ter você com a gente!💫""";
   
 
 }

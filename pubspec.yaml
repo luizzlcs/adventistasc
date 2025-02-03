@@ -1,5 +1,5 @@
 name: bios
-description: "A new Flutter project."
+description: "Igreja Adventista do 7º Dia."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -41,8 +41,19 @@ dependencies:
   googleapis: ^11.0.0
   googleapis_auth: ^1.4.0
   shared_preferences: ^2.1.0
+  favicon: ^1.1.2
+  flutter_native_splash: ^2.4.1
   
 
+flutter_native_splash:
+  color: "#D9D9D9"  # Cor de fundo
+  image: "assets/images/splash.png"  # Caminho da imagem
+  android_12:
+    image: assets/images/splash.png
+    color: "#D9D9D9"
+    android: true
+    ios: true
+    web: true
 
 
 

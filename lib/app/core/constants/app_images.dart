@@ -15,4 +15,5 @@ abstract class AppImages {
   static const logoApostolos = 'assets/images/logoApostolos.png';
   static const tvNovoTempo = 'assets/images/tvNovoTempo.jpeg';
   static const cursoBiblico = 'assets/images/cursoBiblico.png';
+  static const logoStac = 'assets/images/logo_stac.png';
 }
