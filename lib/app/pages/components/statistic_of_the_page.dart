@@ -1,4 +1,4 @@
-import 'package:bios/app/pages/counter_controller.dart';
+import 'package:adventistasc/app/pages/counter_controller.dart';
 import 'package:flutter/material.dart';
 
 class StatisticOfThePage extends StatelessWidget {

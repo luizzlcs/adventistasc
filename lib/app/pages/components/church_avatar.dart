@@ -1,5 +1,5 @@
-import 'package:bios/app/core/constants/url_links.dart';
-import 'package:bios/app/pages/components/popup_menu_shared.dart';
+import 'package:adventistasc/app/core/constants/url_links.dart';
+import 'package:adventistasc/app/pages/components/popup_menu_shared.dart';
 import 'package:flutter/material.dart';
 
 class ChurchAvatar extends StatelessWidget {

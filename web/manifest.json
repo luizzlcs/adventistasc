@@ -1,6 +1,6 @@
 {
-    "name": "bios",
-    "short_name": "bios",
+    "name": "adventistasc",
+    "short_name": "adventistasc",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

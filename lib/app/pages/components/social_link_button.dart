@@ -1,6 +1,6 @@
-import 'package:bios/app/model/social_link_model.dart';
-import 'package:bios/app/pages/components/popup_menu_shared.dart';
-import 'package:bios/app/pages/counter_controller.dart';
+import 'package:adventistasc/app/model/social_link_model.dart';
+import 'package:adventistasc/app/pages/components/popup_menu_shared.dart';
+import 'package:adventistasc/app/pages/counter_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 

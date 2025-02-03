@@ -1,8 +1,8 @@
-import 'package:bios/app/core/constants/app_images.dart';
-import 'package:bios/app/core/constants/url_links.dart';
-import 'package:bios/app/model/social_link_model.dart';
-import 'package:bios/app/pages/counter_controller.dart';
-import 'package:bios/app/pages/social_links_page.dart';
+import 'package:adventistasc/app/core/constants/app_images.dart';
+import 'package:adventistasc/app/core/constants/url_links.dart';
+import 'package:adventistasc/app/model/social_link_model.dart';
+import 'package:adventistasc/app/pages/counter_controller.dart';
+import 'package:adventistasc/app/pages/social_links_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 

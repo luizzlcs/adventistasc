@@ -1,10 +1,10 @@
 import 'dart:developer';
-import 'package:bios/app/model/social_link_model.dart';
-import 'package:bios/app/pages/components/church_avatar.dart';
-import 'package:bios/app/pages/components/gradient_card.dart';
-import 'package:bios/app/pages/components/social_link_button.dart';
-import 'package:bios/app/pages/components/statistic_of_the_page.dart';
-import 'package:bios/app/pages/counter_controller.dart';
+import 'package:adventistasc/app/model/social_link_model.dart';
+import 'package:adventistasc/app/pages/components/church_avatar.dart';
+import 'package:adventistasc/app/pages/components/gradient_card.dart';
+import 'package:adventistasc/app/pages/components/social_link_button.dart';
+import 'package:adventistasc/app/pages/components/statistic_of_the_page.dart';
+import 'package:adventistasc/app/pages/counter_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 

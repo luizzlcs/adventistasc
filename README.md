@@ -1,4 +1,4 @@
-# bios
+# adventistasc
 
 Igreja Adventista do 7º Dia.
 
