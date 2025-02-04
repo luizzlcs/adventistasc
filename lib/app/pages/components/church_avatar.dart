@@ -3,7 +3,11 @@ import 'package:adventistasc/app/pages/components/popup_menu_shared.dart';
 import 'package:flutter/material.dart';
 
 class ChurchAvatar extends StatelessWidget {
-  const ChurchAvatar({super.key, required this.image, required this.userName});
+  const ChurchAvatar({
+    super.key,
+    required this.image,
+    required this.userName,
+  });
 
   final String image;
   final String userName;
@@ -14,8 +18,11 @@ class ChurchAvatar extends StatelessWidget {
       children: [
         Row(children: [
           //Imagem logo da igreja
+          const SizedBox(
+             width:36,
+          ),
           CircleAvatar(
-            radius: 43,
+            radius: 44,
             backgroundColor: Colors.white,
             child: CircleAvatar(
               radius: 40,
