@@ -1,5 +1,6 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:googleapis_auth/auth_io.dart';
 import 'package:googleapis/sheets/v4.dart' as sheets;
 
@@ -57,26 +58,26 @@ class CounterController with ChangeNotifier {
     ButtonType.banda: 27, // A27:B28
   };
 
-  static const _credentials = {
-    "type": "service_account",
-    "project_id": "bios-instagram",
-    "private_key_id": "b455ff6e3a9a51530fc34c25022a6a3d4adc8085",
-    "private_key":
-        "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCyybs+JAKk1jxa\n2BKNhGGTIi6cNG1A28vea7Y1Y/RQJ4qexWgvl2OBnA3ErBAfWjIT5EXbrOWSHeim\nUC5brTLFakuTGlqSFZsgj95ecfcPrJrSzDG4yY17zd+QNvPLlkqNjPQYooqT/CJG\n4aspn+EckDIMG0MaPthGtr/Vmt1IvepymcficJnqUCassSP/f3GwxPMKArBRWdwi\nOn5Wyv2W7ErpMbcZN9Dff2xdECzkItqgVsVKGYaWi9foySF690qHW0uvfQuKRHdU\nP+9M+mgtVSDtZEQ50BZSxDHJCQQ2wAz7cvQgoFhaeIPG3iHhSR34uJ8ujGM8Nf/J\nCjd5aUSfAgMBAAECggEAErKyWG9fr2mQalfKqO49XivnAAMjofLawWo2ZiML/A4G\nm1A98yw8BeQSNI1iKkU+k4H+JFlSsRNbr3kXQBM/ChJx0PKiokCMNr2VHf+BPSxq\nDL26PX8mwtnnFagJmzMenOsu5ByrrYpi81LKmdHUsy4Jbeaz/9yutcaLDYXiuqak\n4c+hFq1EY2TRLpSJk3cT3WbTPwNPbUOi+kYwKqFyAbr/O+JaF8W1QOLevw8KnZnv\nA0qHpIzz+Fl4wU33Y+tQovHqVBOu2ttUHWw8HtYnEhY2rUzUkUCUANN9e3n8rYjL\ntWKlAzcuwNx3fMcB34SoXzL6iGR+wZJOxHfiyVvioQKBgQD1NaoO6/A0kRVWL3Qd\ngWTtCCJh0mpocECzYB19iNtLX1RZqmWLqZmE3EcmrmUeKfWPli/Ut91uNhkTmcga\n3RuzYrw3pUYdTiRwQvzCCWfPN4JE4NiQ9sTcpNXWXnC2g77+HhQsua9yKY5KS1eD\nfi/3sl6Y/uhMNBkwspHu/mAexwKBgQC6p9B2xDbs1NCRdtMX+PZQM2dOJE0dgJ6k\nBKDVcoRTwFVZC/ESoXOHmglMjrRCBdQTyjmnn28+8s7oD7SUs7gDE36JK9RdhOB+\n3A/y9Q1Chblux51758qP6BE7HAeHA0CoJOumY7i5qu4+0IRadt/Ih9BcQ9i2EULR\nrF7DZE0zaQKBgQCfny1yxTf6oC9JiV6HDoJKoq7vCvBlyBz2J61K2NoYOJhKPlgY\nEHF1QYe3sHL2rc3CiLveN0qXwfOVBNh0VFcB8VYgyx/XV9T0l0a+cSz4gWP1voB7\n7Ye9MjhZceThiuW7uozbiIyjPlX4Gw9+85f6IEzgP5+sa4WyY6wH7eNYZQKBgC1a\nYTi6bG4XN6ZgrOICSDcshkliYKpueh14UmwKq0R+Uz6TvDu+pwen0eKcOghgyisU\n0/V6s9kjvkp8pnALSwbUUcaas7sVckbgya9LA7HKNEhKkGVu6LUWujkWkm2nyKoS\nbn+7c0MJ2WHB4Kbqg22CMop4oct7XjT8IPpxAKEhAoGBANKlPwk4xMi1MohU+a2l\nYQRJnfDmCrgxMLKi3lftvct2emD2sut8sBPQ1ToUpx6ywNmLulyU+t2Kn0GfWhSY\nBcKxI6iKZvu5Nej0QAIok7/DqokrQD/u7bqZkXLhx6xa1sbel8nL2h7mYktVj+0Z\nlXvhlFzfnEiRgC7sRkKjq4F9\n-----END PRIVATE KEY-----\n",
-    "client_email": "flutter-sheets@bios-instagram.iam.gserviceaccount.com",
-    "client_id": "100223465449383188781",
-    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-    "token_uri": "https://oauth2.googleapis.com/token",
-    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-    "client_x509_cert_url":
-        "https://www.googleapis.com/robot/v1/metadata/x509/flutter-sheets%40bios-instagram.iam.gserviceaccount.com",
-    "universe_domain": "googleapis.com"
+  
+  static final Map<String, String> _credentials = {
+    "type": dotenv.env['TYPE']!,
+    "project_id": dotenv.env['PROJECT_ID']!,
+    "private_key_id": dotenv.env['PRIVATE_KEY_ID']!,
+    "private_key": dotenv.env['PRIVATE_KEY']!.replaceAll(r'\n', '\n'), // Ajuste para multiline
+    "client_email": dotenv.env['CLIENT_EMAIL']!,
+    "client_id": dotenv.env['CLIENT_ID']!,
+    "auth_uri": dotenv.env['AUTH_URI']!,
+    "token_uri": dotenv.env['TOKEN_URI']!,
+    "auth_provider_x509_cert_url": dotenv.env['AUTH_PROVIDER_X509_CERT_URL']!,
+    "client_x509_cert_url": dotenv.env['CLIENT_X509_CERT_URL']!,
+    "universe_domain": dotenv.env['UNIVERSE_DOMAIN']!,
   };
+
+  static final String _spreadsheetId = dotenv.env['SPREADSHEET_ID']!;
 
   Map<String, String> get credentials => _credentials;
 
-  static const _spreadsheetId = '1uMBYDWLZCk3UuaKnShCvf4ESXeRUGj7idQL5F_yCFkc';
-
+  
   // Novo método que combina carregamento e atualização
   Future<void> initializeAndIncrement() async {
     await loadAllData(); // Primeiro carrega os dados atuais
@@ -91,7 +92,7 @@ class CounterController with ChangeNotifier {
 
     try {
       final client = await clientViaServiceAccount(
-        ServiceAccountCredentials.fromJson(_credentials),
+        ServiceAccountCredentials.fromJson(credentials),
         [sheets.SheetsApi.spreadsheetsScope],
       );
 
@@ -141,7 +142,7 @@ class CounterController with ChangeNotifier {
 
     try {
       final client = await clientViaServiceAccount(
-        ServiceAccountCredentials.fromJson(_credentials),
+        ServiceAccountCredentials.fromJson(credentials),
         [sheets.SheetsApi.spreadsheetsScope],
       );
 
@@ -208,7 +209,7 @@ class CounterController with ChangeNotifier {
 
     try {
       final client = await clientViaServiceAccount(
-        ServiceAccountCredentials.fromJson(_credentials),
+        ServiceAccountCredentials.fromJson(credentials),
         [sheets.SheetsApi.spreadsheetsScope],
       );
 
@@ -276,7 +277,7 @@ class CounterController with ChangeNotifier {
 
     try {
       final client = await clientViaServiceAccount(
-        ServiceAccountCredentials.fromJson(_credentials),
+        ServiceAccountCredentials.fromJson(credentials),
         [sheets.SheetsApi.spreadsheetsScope],
       );
 
