@@ -5,6 +5,7 @@ class StatisticOfThePage extends StatelessWidget {
   const StatisticOfThePage({super.key, required this.controller});
 
   final CounterController controller;
+  
 
   @override
   Widget build(BuildContext context) {

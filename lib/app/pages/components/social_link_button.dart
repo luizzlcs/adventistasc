@@ -2,14 +2,15 @@ import 'package:adventistasc/app/model/social_link_model.dart';
 import 'package:adventistasc/app/pages/components/popup_menu_shared.dart';
 import 'package:adventistasc/app/pages/counter_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SocialLinkButton extends StatelessWidget {
   final SocialLinkModel link;
 
   SocialLinkButton({super.key, required this.link});
-
-  final CounterController _controller = CounterController();
+final _controller = GetIt.instance<CounterController>();
+  // final CounterController _controller = CounterController();
   @override
   Widget build(BuildContext context) {
     return Stack(

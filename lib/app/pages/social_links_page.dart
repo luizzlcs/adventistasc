@@ -1,4 +1,5 @@
 import 'dart:developer';
+
 import 'package:adventistasc/app/model/social_link_model.dart';
 import 'package:adventistasc/app/pages/components/church_avatar.dart';
 import 'package:adventistasc/app/pages/components/gradient_card.dart';
@@ -7,6 +8,7 @@ import 'package:adventistasc/app/pages/components/statistic_of_the_page.dart';
 import 'package:adventistasc/app/pages/counter_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:get_it/get_it.dart';
 
 class SocialLinksPage extends StatefulWidget {
   final String profileImageUrl;
@@ -24,13 +26,15 @@ class SocialLinksPage extends StatefulWidget {
 }
 
 class _SocialLinksPageState extends State<SocialLinksPage> {
-  final CounterController _counterController = CounterController();
+
+  final _counterController = GetIt.instance<CounterController>();
 
   @override
   void initState() {
     super.initState();
     FlutterNativeSplash.remove();
-    _counterController.initializeAndIncrement();
+    _counterController.initialize();
+    _counterController.incrementPageAccess();
     log('contador: ${_counterController.pageAccessCount}');
   }
 
