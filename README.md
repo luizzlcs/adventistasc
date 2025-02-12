@@ -1,7 +1,7 @@
 # Aplicativo de Diretório de Links em Flutter
 
 <a href="()"></a>
-[ACESSAR  PROJETO](https://github.com/luizzlcs/order/blob/master/src/main/java/com/antares/order/OrderApplication.java)
+[ACESSAR  PROJETO](https://github.com/luizzlcs/adventistasc)
 
 <p align="center">
  <img src="assets/images/app.png" width="170" height="250" />
