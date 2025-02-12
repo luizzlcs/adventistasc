@@ -1,11 +1,7 @@
 import 'package:adventistasc/app/config/setup.dart';
 import 'package:adventistasc/app/core/constants/app_images.dart';
 import 'package:adventistasc/app/core/constants/parameters_social_link.dart';
-import 'package:adventistasc/app/core/constants/url_links.dart';
-import 'package:adventistasc/app/model/social_link_model.dart';
-import 'package:adventistasc/app/pages/counter_controller.dart';
 import 'package:adventistasc/app/pages/social_links_page.dart';
-import 'package:adventistasc/app/service/counter_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
@@ -29,11 +25,11 @@ void main() async {
   debugPrint('Project ID: $projectId');
   debugPrint('Private Key: $privateKey');
 
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({super.key});
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
