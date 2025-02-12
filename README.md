@@ -1,7 +1,7 @@
 # Aplicativo de Diretório de Links em Flutter
 
 <a href="()"></a>
-[ACESSAR  PROJETO](https://github.com/luizzlcs/adventistasc)
+[ACESSAR  CÓDIGO](https://github.com/luizzlcs/adventistasc)
 
 <p align="center">
  <img src="assets/images/app.png" width="170" height="250" />
@@ -111,10 +111,6 @@ flutter_native_splash:
 ## 📄 Versão
 
 Versão atual: 1.0.0+1
-
-## 📝 Observação
-
-Este projeto não é publicado no pub.dev e destina-se apenas para uso privado.
 
 ### Autor
 Sou desenvolvedor fullstack, sempre buscando entregar soluções completas e eficientes, utilizando tecnologias modernas como Dart e Flutter no front-end e Java no back-end. Desde 2022, trabalho na Ponto Care, criando aplicativos para Android e Web, com foco em inovação, qualidade e garantindo a melhor experiência para o usuário.
