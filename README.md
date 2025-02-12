@@ -3,7 +3,7 @@
 <a href="()"></a>
 [ACESSAR  PROJETO](https://github.com/luizzlcs/order/blob/master/src/main/java/com/antares/order/OrderApplication.java)
 
-<div style="text-align: center;">
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
     <img src="assets/images/app.png" width="170" height="250" />
 </div>
 
