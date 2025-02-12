@@ -19,12 +19,50 @@ class CounterRepository {
   };
 
   final String _spreadsheetId = dotenv.env['SPREADSHEET_ID']!;
+  AutoRefreshingAuthClient? _cachedClient;
+
+  Future<bool> verifyCredentials() async {
+    try {
+      final credentials = ServiceAccountCredentials.fromJson(_credentials);
+      
+      // Tenta criar um cliente e fazer uma chamada simples
+      final client = await clientViaServiceAccount(
+        credentials,
+        [sheets.SheetsApi.spreadsheetsScope],
+      );
+      
+      final sheetsApi = sheets.SheetsApi(client);
+      await sheetsApi.spreadsheets.get(_spreadsheetId);
+      
+      client.close();
+      return true;
+    } catch (e) {
+      log('Erro na verificação de credenciais: $e');
+      return false;
+    }
+  }
+
+  Future<AutoRefreshingAuthClient> _getAuthClient() async {
+    try {
+      if (_cachedClient != null) {
+        return _cachedClient!;
+      }
+
+      final credentials = ServiceAccountCredentials.fromJson(_credentials);
+      _cachedClient = await clientViaServiceAccount(
+        credentials,
+        [sheets.SheetsApi.spreadsheetsScope],
+      );
+      
+      return _cachedClient!;
+    } catch (e) {
+      log('Erro ao obter cliente autenticado: $e');
+      throw Exception('Falha na autenticação: $e');
+    }
+  }
 
   Future<sheets.SheetsApi> _getSheetsApi() async {
-    final client = await clientViaServiceAccount(
-      ServiceAccountCredentials.fromJson(_credentials),
-      [sheets.SheetsApi.spreadsheetsScope],
-    );
+    final client = await _getAuthClient();
     return sheets.SheetsApi(client);
   }
 
@@ -34,6 +72,12 @@ class CounterRepository {
       final response = await sheetsApi.spreadsheets.values.get(_spreadsheetId, range);
       return response.values;
     } catch (e) {
+      if (e.toString().contains('invalid_grant')) {
+        log('Erro de credenciais inválidas: $e');
+        // Limpa o cliente em cache para forçar uma nova autenticação
+        _cachedClient?.close();
+        _cachedClient = null;
+      }
       log('Erro ao obter valores: $e');
       return null;
     }
@@ -49,7 +93,17 @@ class CounterRepository {
         valueInputOption: 'RAW',
       );
     } catch (e) {
+      if (e.toString().contains('invalid_grant')) {
+        log('Erro de credenciais inválidas: $e');
+        _cachedClient?.close();
+        _cachedClient = null;
+      }
       log('Erro ao atualizar valores: $e');
+      throw Exception('Falha ao atualizar valores: $e');
     }
+  }
+
+  void dispose() {
+    _cachedClient?.close();
   }
 }
